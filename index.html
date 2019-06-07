@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  </head>
+  <body style="background-image: url(bg.jpg);">
+	<h4>Муравьи:<span class="colvo"></span></h4>
+	<h4>очки:<span class="score"></span></h4>
+
+
+
+
+
+
+	<script type="text/javascript">
+
+let ants=0;
+let o=0;
+
+		let interv= function(){
+
+			let rand = Math.random()*1300;
+			let round = Math.round(rand);
+
+			let rand_top = Math.random()*700;
+			let round_top = Math.round(rand_top);
+
+
+			let newDiv = document.createElement('img');
+
+			document.body.appendChild(newDiv);
+			
+			newDiv.src="img.svg";
+			newDiv.style.height="200px";
+			newDiv.style.width="200px";
+
+			newDiv.style.marginLeft = round +"px";
+			newDiv.style.marginTop = round_top +"px";
+			newDiv.style.position = "absolute";
+
+			ants =ants+1;
+			document.querySelector(".colvo").innerHTML=ants
+
+			newDiv.onclick =function(){
+				newDiv.style.display = "none";
+				o=o+1;
+				document.querySelector(".score").innerHTML=o
+			}
+
+		}
+		setInterval(interv,1000);
+	</script>
+  </body>
+</html>
